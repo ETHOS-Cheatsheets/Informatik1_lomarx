@@ -1,14 +1,1011 @@
-\documentclass[numerate]{cheatsheet}
-\usepackage{bm}
-\usepackage{textcomp, mathcomp}
-\usepackage{empheq}
-\usepackage{pbox}
-\usepackage{booktabs}
+\documentclass[a3paper, 10pt, landscape]{scrartcl}
 
-\doctitle{... Cheatsheet}
-\author{AUTHOR \\ \vspace*{-0.2em}}
+\usepackage[german]{babel} %choose your language
+\usepackage[landscape, margin=1cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amscd, amsmath, amssymb, blindtext, empheq, enumitem, multicol, parskip}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{esint}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{trfsigns}
+\usepackage{mathtools}
+\usepackage{cmbright,bm}
+\usepackage{esvect}
+\usepackage{makecell}
 
+\RedeclareSectionCommands[
+  %runin=false,
+  afterindent=false,
+  beforeskip=.1\baselineskip,
+  afterskip=.1\baselineskip]{section}
+\RedeclareSectionCommands[
+  %runin=false,
+  afterindent=false,
+  beforeskip=.1\baselineskip,
+  afterskip=.1\baselineskip]{subsection}
+\RedeclareSectionCommands[
+  %runin=false,
+  afterindent=false,
+  beforeskip=.1\baselineskip,
+  afterskip=.1\baselineskip]{subsubsection}
+%\titlespacing{\section}{0pt}{*0}{*0}
+%\titlespacing{\subsection}{0pt}{*0}{*0}
+%\titlespacing{\subsubsection}{0pt}{*0}{*0}
+
+\parindent 0pt
+\pagestyle{empty}
+\setlength{\unitlength}{1cm}
+\setlist{leftmargin = *}
+
+\setlength{\parskip}{0cm}
+\setlength{\parindent}{0em}
+
+\def\StyleColor{Apricot}
+
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\divg}{div}
+
+\usepackage{color}
+\definecolor{section}{RGB}{175, 60, 230}
+\definecolor{subsection}{RGB}{211, 153, 230}
+\definecolor{subsubsection}{RGB}{238, 218, 229}
+\definecolor{titletext}{RGB}{0,0,0}
+\definecolor{formula}{RGB}{220,230,255}
+
+% section color box
+\setkomafont{section}{\mysection}
+\newcommand{\mysection}[1]{
+    \Large\bfseries
+    \setlength{\fboxsep}{0cm}
+    \colorbox{section}{
+        \begin{minipage}{\linewidth-0.11cm}
+            \vspace*{1pt}
+            \leftskip2pt 
+            \rightskip\leftskip
+            {\color{titletext} #1}
+            \vspace*{1pt}
+        \end{minipage}
+    }}
+%subsection color box
+\setkomafont{subsection}{\mysubsection}
+\newcommand{\mysubsection}[1]{
+    \normalsize \bfseries
+    \setlength{\fboxsep}{0cm}
+    \colorbox{subsection}{
+        \begin{minipage}{\linewidth}
+            \vspace*{1pt}
+            \leftskip2pt 
+            \rightskip\leftskip 
+            {\color{titletext} #1}
+            \vspace*{1pt}
+        \end{minipage}
+    }}
+    
+%subsubsection color box
+\setkomafont{subsubsection}{\mysubsubsection}
+\newcommand{\mysubsubsection}[1]{
+    \normalsize \bfseries
+    \setlength{\fboxsep}{0cm}
+    \colorbox{subsubsection}{
+        \begin{minipage}{\linewidth}
+            \vspace*{1pt}
+            \leftskip2pt 
+            \rightskip\leftskip
+            {\color{titletext} #1}
+            \vspace*{1pt}
+        \end{minipage}
+    }}    
+
+
+\newcommand{\dis}[1]{\hspace{#1cm}}
+    
+% equation box        
+\newcommand{\eqbox}[1]{\fcolorbox{section}{formula}{\hspace{0.5em}$\displaystyle#1$\hspace{0.5em}}}
+
+%macro for vectors 
+%\newcommand{\vect}[1]{\vec{#1}}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+
+%code snippet
+\newcommand{\code}[1]{\texttt{#1}}
+
+%\renewcommand{\familydefault}{cmss}
+\DeclareSymbolFont{letters}{OML}{ztmcm}{m}{it}
+\DeclareSymbolFontAlphabet{\mathnormal}{letters}
+
+%\everymath{\displaystyle}  %bigger equations
 \begin{document}
-\section{Section}
-	\input{src/1_section/1_subsection.tex}
+%\setcounter{secnumdepth}{0} %no enumeration of sections
+	\begin{multicols*}{3}
+	
+	
+%-------------------------------------------------------
+\section*{Disclaimer}
+    \vspace{0.2cm}
+    Diese Zusammenfassung wurde zur Vorlesung "`Informatik I"' von Dr. Malte Schwerhoff und Dr. Hermann Lehner (FS20) erstellt. Die Zusammenfassung soll und darf gerne modifiziert werden (Latex-Files liegen bei), und soll dann auch weiterhin anderen Studenten zur Verfügung stehen. \\
+			
+    Für Korrektheit und Vollständigkeit ist keine Gewähr.\\
+			
+    Josephine Loehle und Leo Landolt, 21. Mai 2021
+
+    Angepasst von Loa Marx, 21. Dezember 2023
+    \vfill\null
+\pagebreak
+	
+\section{Grundlagen}
+
+	\subsection{Typen}
+	
+		\subsubsection{Overview}
+		\vspace{0.1cm}
+		
+		\begin{tabular} {l l c l}
+			\textbf{Typ} & \textbf{Was} & \textbf{Werte} & \textbf{Bits} \\
+			\hline
+			double & präzisere Reelle Zahlen & $1.7*10^{\pm308}$ & 64 \\
+			float & Reelle Zahlen & $3.4*10^{\pm38}$ & 32\\
+			unsigned int & Natürliche Zahlen & 0 bis $ 2^{32}-1$ & 32\\
+			int & Ganze Zahlen & $-2^{31}$ bis $2^{31}-1$ & 32\\
+			
+			bool & Wahrheitswerte & true (1) oder false (0) & 8\\
+			\hline
+			
+			char & Zeichen & & 8 \\
+			
+			
+			
+			\end{tabular}\\
+			
+			Bei einem Konflikt wird in den allgemeineren $\uparrow$ Zahlentyp konvertiert.\\
+			Bsp.: \code{int a + float b = float c}
+			\vspace{0.1cm}
+		
+		\subsection{Fliesskommazahlen}
+		
+		\subsubsection{Fliesskommazahlensysteme}
+		\vspace{0.1cm}
+		Durch 4 natürliche Zahlen definiert: F($\beta$, p, e$_{min}$, e$_{max}$) \\
+		\begin{tabular}{l l}
+			\textbf{$\beta\geq2$} & Die Basis \\
+			\textbf{p $\geq1$} & Die Präzision (= Stellenanzahl, Mantisse) \\
+			\textbf{e$_{min}$} & Der kleinste Exponent \\
+			\textbf{e$_{max}$} & Der grösste Exponent
+		\end{tabular}
+		
+		\subsubsection{Normalisierte Darstellung}
+		
+		\centerline{$\pm d_0$.$d_1$...$d_{p-1}$*$\beta^e$ = F*($\beta$, p, e$_{min}$, e$_{max}$)}
+		\begin{itemize}
+			\item Eine Ziffer (!= 0) vor dem Komma, der Rest dahinter
+			\item Normalisierte Darstellung ist eindeutig
+			\item Die Zahl 0 und alle Zahlen kleiner als $\beta^{e_{min}}$ haben keine normalisierte Darstellung
+			\item Zum Runden eine Stelle nach erwünschter Präzision anschauen: falls 0 einfach ignorieren, falls 1 die Stelle davor +1 rechnen
+		\end{itemize}
+		
+		\subsubsection{IEEE Standard 754}
+		\begin{tabular}{l l}
+			\textbf{float} & 1 Bit für das Vorzeichen \\
+			& 23 Bit für den Signifikanden (= Bits nach dem Komma) \\
+			& 8 Bit für den Exponenten (254 Exponenten, 2 Spezialwerte) \\
+			\hline
+			& insgesamt 32 Bit \\
+			& F*(2, 24, -126, 127) \\
+			\hline
+			\textbf{double} & 1 Bit für das Vorzeichen \\
+			& 52 Bit für den Signifikanden (= Mantisse -Bits) \\
+			& 11 Bit für den Exponenten (2046 Exponenten, 2 Spezialwerte) \\
+			\hline
+			&insgesamt 64 Bit \\
+			& F*(2, 53, -1022, 1023) \\
+			
+			\hline\hline 
+			
+			\textbf{$\pm$0} &Mantisse-Bits sind 0 \\
+			& Exponenten-Bits sind 0 \\
+			\hline
+			\textbf{$\pm \infty$} & Mantisse-Bits sind 0 \\
+			& Exponenten-Bits sind alles 1 \\
+			\hline
+			\textbf{nan} & Mantisse-Bits $>$ 0 \\
+			& Exponenten-Bits sind alles 1
+			
+			
+		\end{tabular}
+		
+		
+		\subsubsection{Float und Double}
+		\begin{tabular}{l l}
+			\textbf{float} & 7 Stellen \\
+			& Exponent bis $\pm38$ \\
+			\textbf{double} & 15 Stellen \\
+			& Exponent bis $\pm308$ \\
+		\end{tabular}
+		
+		\subsubsection{Fliesskomma-Richtlinien}
+		\begin{itemize}
+			\item Teste keine Fliesskommazahlen auf Gleichheit
+			\item Addiere keine Fliesskommazahlen sehr unterschiedlicher Grösse
+			\item Subtrahiere keine Fliesskommazahlen ähnlicher Grösse
+			\item Der Modulo-Operator \code{\%} existiert nicht
+			\item Division ist mit Nachkommastellen
+		\end{itemize}
+		
+			
+		\subsection{Konstanten}
+		\begin{itemize}
+			\item const type name
+			\item Wert der Variable name darf nicht mehr verändert werden.
+		\end{itemize}
+		
+	\subsection{Werte}
+	
+		\subsubsection{L-Wert}
+		\textbf{Links} vom Zuweisungsoperator. \\
+		Speicher, hat eine Adresse. \\
+		Kann seinen Wert ändern.
+		\subsubsection{R-Wert}
+		\textbf{Rechts} vom Zuweisungsoperator. \\
+		Kann seinen Wert nicht ändern. \\
+		L-Wert kann als R-Wert verwendet werden aber nicht andersherum.
+		
+	\subsection{Operatoren}
+	
+	\subsubsection{Overview}
+	\begin{tabular}{l c l l l}
+	\textbf{Operator} & \textbf{Zeichen} & \textbf{Eingabe} & \textbf{Ausgabe}\\
+	\hline
+	Arithmetische Operatoren \\
+	Multiplikation & \code{*} & R-Werte & R-Wert\\
+	Division & \code{/} & R-Werte & R-Wert\\
+	Modulo & \code{\%} & R-Werte & R-Wert\\
+	Addition & \code{+} & R-Werte & R-Wert\\
+	Substraktion & \code{-} & R-Werte & R-Wert\\
+	Post-Inkrement/Dekrement & \code{expr++} & L-Wert & R-Wert\\
+	Prä-Inkrement/Dekrement & \code{++expr} & L-Wert & L-Wert\\
+	
+	\hline
+	
+	Relationale Operatoren \\
+	Kleiner als & \code{<} & R-Werte & R-Wert\\
+	Grösser gleich & \code{>=} & R-Werte & R-Wert\\
+	Gleich  & \code{==} & R-Werte & R-Wert\\
+	Ungleich & \code{!=} & R-Werte & R-Wert\\
+	
+	\hline
+	
+	Logische Operatoren \\
+	And & \code{\&\&} & R-Werte & R-Wert \\
+	Or & \code{||} & R-Werte & R-Wert \\
+	Not & \code{!} & R-Wert & R-Wert \\
+	
+	\hline
+	
+	Zuweisung & \code{=} & R-\&L-Wert & L-Wert \\
+	
+	Eingabe & \code{>>}  & L-Werte & L-Wert\\
+	Ausgabe & \code{<<} & L-\& R-Werte & L-Wert\\
+	
+	\end{tabular}
+	
+	\subsubsection{Präzedenzen}
+	\begin{enumerate}
+		\item Klammern
+		\item Not
+		\item Arithmetische Operatoren
+		\begin{itemize}
+			\item Punkt vor Strich
+			\item Unäre Operatoren vor binären
+		\end{itemize}
+		\item Relationale Operatoren
+		\item Binäre logische Operatoren
+		\begin{itemize}
+			\item \code{\&\&} vor \code{||}
+		\end{itemize}
+	\end{enumerate}
+	
+	\subsubsection{Zusätzliches}
+	\begin{itemize}
+		\item (a/b)*b + (a\%b) == a
+		\item XOR(a,b): (a $\mid\mid$ b) \&\& !(a \&\&b)
+		\item De Morgan: !(a \&\& b) == (!a $\mid\mid$ !b) bzw. !(a $\mid\mid$ b) == (!a \&\& !b)
+		\item false \&\& $(\dots) \rightarrow$ false
+		\item true $\mid\mid$ $(\dots) \rightarrow$ true
+
+		
+	\end{itemize}
+	
+	\subsection{Zahlensysteme}
+	
+	\begin{tabular}{l l}
+		\textbf{Binär} & Basis ist 2 \\
+		\textbf{Dezimal} & Basis ist 10 \\
+		\textbf{Hexadezimal} & Basis ist 16 mit [0-9] $\hat{=}$ [0-9] und [10-15] $\hat{=}$ [A-F]
+	\end{tabular}
+	
+	\subsubsection{Umrechnung}
+	\begin{tabular}{p{1.3cm} p{11.3cm}}
+	Dezimal zu Basis & Teile die Dezimalzahl wiederholt durch die Basis und notiere die Reste. Die Zahl in der neuen Basis besteht aus den Resten in umgekehrter Reihenfolge:\\
+        & \makecell[l]{18/2 = 9 R\textcolor{red}{0} $\Rightarrow$ 9/2 = 4 R\textcolor{red}{1} $\Rightarrow$ 4/2 = 2 R\textcolor{red}{0} $\Rightarrow$ 2/2 = 1 R\textcolor{red}{0} $\Rightarrow$ 1/2 = 0 R\textcolor{red}{1} \\ $\Rightarrow$ 10010} \\	 \hline
+	Basis zu Dezimal & Basis-Potenzen bilden und aufaddieren:10010 $\Rightarrow$ 1*16 + 0*8 + 0*4 + 1*2 + 0*1 $\Rightarrow$ 18 \\ \hline
+        Binär zu Hexa. & Jede HD-Ziffer kann einzeln in eine 4-Stellige Binärzahl umgewandelt werden. In derselben Reihenfolge aneinandergliedern: \textcolor{blue}{1}\textcolor{YellowGreen}{A}\textcolor{red}{3} $\Rightarrow$ \textcolor{blue}{1}\textcolor{YellowGreen}{10}\textcolor{red}{3} $\Rightarrow$ \textcolor{blue}{0001}\textcolor{YellowGreen}{1010}\textcolor{red}{0011} $\Rightarrow$ 110100011\\
+	
+		
+	\end{tabular}
+ 
+        \subsubsection{Binär}
+	\begin{tabular}{l l l l l l l l l l l }
+        $2^{10}$ & $2^9$ & $2^8$ & $2^7$ & $2^6$ & $2^5$ & $2^4$ & $2^3$ & $2^2$ & $2^1$ & $2^0$ \\
+        1024 & 512 & 256 & 128 & 64 & 32 & 16 & 8 & 4 & 2 & 1 \\
+        \end{tabular}
+		\subsubsection{Hexadezimal}
+        \begin{tabular}{l l l l}
+        $16^{3}$ & $16^2$ & $16^1$ & $16^0$ \\
+        4096 & 256 & 16 & 1
+        \end{tabular}
+
+%--------------------------------------------
+	
+\section{Schleifen}
+	
+	\subsection{if, else if, else}
+	\code{\textcolor{red}{if} (condition) \{ \\
+	\phantom{if} statement; \\
+	\} 
+	\textcolor{blue} {$\backslash \backslash$ statement is executed if condition is true} \\
+	\newline
+	\textcolor{red}{else if} (condition)\{ \\
+	\phantom{else if} statement; \\
+	\} \textcolor{blue} {$\backslash \backslash$ like if-loop but only looked at if condition before false} \\
+	\newline
+	\textcolor{red}{else} \{statement; \\
+	\} \textcolor{blue}{$\backslash \backslash$ executed if other conditions are false }
+	}
+	\subsection{for}
+	\code{\textcolor{red}{for} (initialisation; condition; expression) \{ \\
+	\phantom{for} statement; \\
+	\} \textcolor{blue}{$\backslash \backslash$ (i) initialisation statement is executed. \\
+	\phantom{) } $\backslash \backslash$(ii) while condition == true, statement is executed, expression is executed. }
+	}
+	\subsection{while}
+	\code{\textcolor{red}{while} (condition) \{ \\
+	\phantom{while} statement; \\
+	\} \textcolor{blue}{$\backslash \backslash$ statement is executed while condition == true}
+	}
+	\subsection{do while}
+	\code{\textcolor{red}{do} \{ \\
+	\phantom{d} statement;\} \\
+	\textcolor{red}{while} (condition); \textcolor{blue}{$\backslash \backslash$ statement is executed once, afterwards while-loop}
+	}
+	\subsection{switch}
+	\code{\textcolor{red}{int} grade;\\
+	\textcolor{red}{switch}(grade) \{ \\
+	\phantom{a} \textcolor{red}{case} 6: statement1; \textcolor{blue}{$\backslash \backslash$matching case is executed} \\
+	\phantom{a} \textcolor{red}{case} 5: statement2; \\
+	\phantom{a} \textcolor{red}{case} ...; \\
+	\phantom{ab} \textcolor{red}{break}; \textcolor{blue}{$\backslash \backslash$ all statements until break are executed (Durchfallen)} \\
+	\phantom{a} \textcolor{red}{case} 3: statement3; \\
+	\phantom{a} \textcolor{red}{case} ...; \\
+	\phantom{ab} \textcolor{red}{break}; \\
+	\textcolor{red}{default}: statement else; \textcolor{blue}{ $\backslash \backslash$ if no case matches}
+	}
+	
+	\subsection{Schleifen umwandeln}
+	
+	\begin{tabular}{l | l}
+	\textbf{Anweisung A} & \textbf{Anweisung B} \\
+	\hline
+	\code{\textcolor{red}{while} (condition) statement;} & \code{\textcolor{red}{for} ( ; condition; ) statement;} \\
+	\hline
+	\code{\textcolor{red}{do} statement;}  & \code{statement} \\
+	\code{\textcolor{red}{while} (condition);} & \code{\textcolor{red}{while} (condition) statement;} \\
+	\hline
+	\code{\textcolor{red}{for} (\textcolor{red}{int} i = 0; i $<$ n; i++)\{} & \code{\{\textcolor{red}{int} i = 0;}\\
+	\code{\phantom{for }statement;} & \code{while(i $<$ n) \{ statement; i++; \}\}}
+	\end{tabular}
+	
+	
+	\subsection{Sprunganweisungen}
+	\begin{tabular}{l l}
+	\textbf{break;} & Schleife wird sofort beendet. \\
+	\textbf{continue;} & Rest des Statements wird übersprungen. \\
+	& Man gelangt direkt zur Expression.
+		
+	\end{tabular}
+		
+%---------------------------------------------	
+
+\section{Funktionen}
+	\subsection{Grundlagen}
+	\subsubsection{Wieso Funktionen?}
+	Kapseln häufig gebrauchte Funktionalitäten und vermeiden somit Code-Duplizierung. 
+	
+	\subsubsection{Funktionsdefinition}
+	\code{\textcolor{red}{Type} fname (\textcolor{red}{type$_1$} pname$_1$, \textcolor{red}{type$_2$} pname$_2$, ..., \textcolor{red}{type$_N$} pname$_N$)\{ \\
+	\phantom{Type }block; \\
+	\phantom{Type }return Type; \\
+	}	
+	\subsubsection{Funktionsaufruf}
+	\code{fname(expression$_1$, expression$_2$, ..., expression$_N$)\\ \textcolor{blue}{$\backslash \backslash$ expression$_{1-N}$ müssen in type$_{1-N}$ konvertierbar sein.}
+	}
+	\subsection{Der Typ void}
+	\begin{itemize}
+		\item Fundamentaler Type mit leerem Wertebereich
+		\item Gibt keinen Wert zurück, sondern hat nur einen Effekt
+		\item Kein return nötig, aber möglich
+	\end{itemize}
+	
+	\subsection{Vor- und Nachbedingungen}
+	\vspace{0.1cm}
+	\textcolor{blue}{$\backslash \backslash$ PRE: Was muss bei Funktionsaufruf gelten? \\
+	\phantom{// PRE: }Was ist der Definitionsbereich der Funktion? \\
+	\phantom{// PRE: }So schwach wie möglich $\rightarrow$ möglichst grosser Definitionsbereich}\\
+	\textcolor{blue}{$\backslash \backslash$ POST: Was gilt nach dem Funktionsaufruf? \\
+	\phantom{// POST: }Welchen Wert gibt die Funktion zurück? \\
+	\phantom{// POST: }So stark wie möglich $\rightarrow$ möglichst detaillierte Aussage} 	
+	
+	\subsection{Gültigkeitsbereich einer Funktion}
+	\vspace{0.1cm}
+	\begin{itemize}
+		\item Funktion darf nach Deklaration verwendet werden, auch wenn sie erst später wirklich definiert wird.
+		\item Deklaration einer Funktion ist wie Definition nur ohne \{\dots\}.
+	\end{itemize}
+	
+	\subsection{Wiederverwenden von Funktionen}
+	\subsubsection{Funktion Auslagern und Inkludieren}
+	\vspace{0.1cm}
+	\begin{itemize}
+		\item Funktionen in eigene Datei schreiben (functions.cpp)
+		\item Datei ins Arbeitsverzeichnis der Hauptdatei stecken und durch \code{\#include} "\code{functions.cpp}" \space Funktionen inkludieren.
+		\item Nachteil: compiler muss die Funktionsdefinition für jedes Programm neu übersetzen
+			$\rightarrow$ Kann bei vielen und grossen Funktionen sehr lange dauern
+	\end{itemize}
+	
+	\subsubsection{Getrennte Übersetzung}
+	\vspace{0.1cm}
+	\begin{itemize}
+		\item Funktionen ohne Main-Funktion kompilieren: functions.cpp $\rightarrow$ functions.o
+		\item Deklarationen aller benötigten Symbole in einer Header-Datei functions.h
+		\item Header-Datei ins Arbeitsverzeichnis stecken und durch \code{\#include} "\code{functions.h}" \space inkludieren
+		\item Vorteil: Quellcode (.cpp) wird nach dem Erzeugen vom Objectcode (.o)  nicht mehr gebraucht $\rightarrow$ Code ist nicht öffentlich
+	\end{itemize}
+	
+	\subsubsection{Namensräume}
+	\code{namespace std\{ \\
+	\} \textcolor{blue}{$\backslash \backslash$Innerhalb der Klammern kann std:: weggelassen werden}
+	}
+	
+
+%---------------------------------------------
+
+\section{Referenztypen}
+
+	\subsection{Definition, Initialisierung und Zuweisung}
+	\vspace{0.1cm}
+	\code{\textcolor{red}{Type}\& alias = expr  \textcolor{blue}{$\backslash \backslash$alias ist ein neuer Name für expr}}
+	\vspace{0.1cm}
+	\subsection{Call by}
+	
+	\subsubsection{Reference}
+	\vspace{0.1cm}
+	\begin{itemize}
+		\item Funktionsargumente sind (teilweise) Referenztypen.
+		\item Durch den Alias ist es möglich, Funktionsargumente dauerhaft, auch ausserhalb der Funktion zu ändern.
+	\end{itemize}
+	
+	\subsubsection{Value}
+	\vspace{0.1cm}
+	\begin{itemize}
+		\item Argumente haben keine Referenztypen.
+		\item Beim Funktionsaufruf werden alle Argumente kopiert, am Ende der Funktion werden alle Kopien wieder gelöscht.
+		\item Es ist nicht möglich, Funktionsargumente dauerhaft zu ändern.
+	\end{itemize}
+	
+	\subsection{Const-Referenzen}
+	\vspace{0.1cm}
+	\code{\textcolor{red}{const Type}\& == (\textcolor{red}{const Type})\& \\}
+	Es wird ein Lese-Alias gebildet, durch den der Wert dahinter nicht verändert werden darf. \\
+	Funktionsargumente müssen so nicht kopiert werden müssen $\rightarrow$ effizient
+	\vspace{3cm}
+
+%--------------------------------------------
+
+\section{Vektoren \& Strings}
+
+	\subsection{Vektoren}
+	Dienen zum Speichern gleichartiger Daten in einem zusammenhängenden Speicherlayout. \\
+	Benötigt \code{\#include $<$vector$>$}
+	
+	\subsubsection{Vektorinitialisierung}
+	
+	\begin{tabular}{l l}
+	
+	\textbf{std::vector$<$int$>$ vec(n);} & Die n Elemente von vec werden mit \\
+	& Nullen initialisiert. \\
+	\\
+	\textbf{std::vector$<$int$>$ vec(n, x);} & Die n Elemente von vec werden mit \\
+	&  x initialisiert. \\
+	\\
+	\textbf{std::vector$<$int$>$ vec\{a, b, c, d\};} &Der Vektor wird mit einer \\
+	& Initialisierungslist initialiseirt. \\
+	\\
+	\textbf{std::vector$<$int$>$ vec;} & Ein leerer Vektor wird initialisiert.
+	\end{tabular}
+	
+	\subsubsection{Matrixinitialisierung}
+	\begin{tabular}{l l}
+		
+	\textbf{std::vector$<$std::vector$<$int$>>$ mat;} & Eine leere Matrix wird initialisiert.\\
+	\\
+	\textbf{std::vector$<$std::vector$<$int$>>$ mat =} & Matrix wird mittels Initialisierungs-\\
+	\textbf{\{ \{a, b, ....\}, \{...\}, ...\};} & liste initialisiert. \\
+	\\
+	\textbf{std::vector$<$std::vector$<$int$>>$} & Eine n Mal m Matrix wird\\
+	\textbf{mat(n, std::vector$<$int$>$(m))} & initialisiert.
+	
+	
+	\end{tabular}
+	
+	\subsubsection{Auf Elemente zugreifen}
+	\textbf{Vektor}\\
+	vec[n] gibt einem das n-te Element eines Vektors. \\
+	vec.at(n) prüft zusätzlich noch die Vektorgrenzen \\
+	\textbf{Matrix}\\
+	m[n$_1$][n$_2$] mit 1. Zeile, 2. Spalte \\
+	m.at(n$_1$).at(n$_2$) prüft zusätzlich noch Matrixgrenzen \\
+	\textcolor{red}{Achtung: Der Index von Vektoren beginnt bei 0!}
+	
+	\subsubsection{Vektorfunktionen}
+	\begin{tabular}{l l}
+		\textbf{.size()} & Gibt Länge des Vektors zurück \\
+		\textbf{.push\_back(x)} & Fügt Element x hinten an. \\
+		\textbf{.empty()} & Prüft, ob der Vektor leer ist.\\
+		\textbf{.clear()} & Löscht den Inhalt.\\
+
+	\end{tabular}
+	
+	\subsection{Zeichen und Texte}
+	
+	\subsubsection{Der Typ char}
+	\vspace{0.1cm}
+	\code{\textcolor{red}{char} c = 'a'; \textcolor{blue}{$\backslash \backslash$ Repräsentiert druckbare Zeichen und Steuerzeichen.}\\}
+	
+	\subsubsection{Strings}
+	\code{std::string s =} "\code{I like Pie}" \space\code{\textcolor{blue}{$\backslash \backslash$ Entspricht Vektor von char-Elementen.}\\
+	\phantom{std::string s = II like Pie }\space\textcolor{blue}{$\backslash \backslash$ Benötigt \#include $<$string$>$}}\\
+	
+	\code{std::string text(n, 'a') \textcolor{blue}{$\backslash \backslash$ Initialisiert String der Länge n voller a.}}\\
+	
+	\begin{itemize}
+		\item Strings können verglichen werden (\code{text1 == text2})
+	\item Um auf einzelne Characters zuzugreifen benutzt man die gleiche Schreibweise wie bei Vektoren.
+	\item Man kann Texte zusammensetzen (\code{text1 += text2})
+	\item Die Grösse eines Textes kann ausgegeben werden mit text.length()
+	\end{itemize}
+	
+	\subsubsection{Ströme}
+	\begin{tabular}{l l}
+		Konsole & benötigt \code{\#include $<$iostream$>$}\\
+		& \code{std::cin >> in;} \\
+		& \code{std::cout << out;} \\
+		& Nur als Referenz für Funktionsargument\\
+		\hline
+		Dateien & benötigt \code{\#include $<$fstream$>$}\\
+		& \code{std::ifstream in(filename)};\\
+		& \code{std::ofstream out(filename)};\\
+		& Eingabe prüfen: \code{while (in >> input)}\\
+		& Analog dazu sstream für Strings\\
+		\hline
+		Abstrakt & \code{std::istream/std::ostream}\\
+		& \\
+		
+	\end{tabular}
+	
+	
+	\subsubsection{Der ASCII-Code}
+	\vspace{0.1cm}
+	Definiert konkrete Konversionsregeln char $\leftrightarrow$ (unsigned) int
+	
+	
+	
+
+%---------------------------------------------
+
+\section{Rekursion}
+	
+	\subsection{Basics}
+
+	\subsubsection{Base Case}
+	\vspace{0.1cm}
+	\begin{itemize}
+		\item Kleinst mögliches Problem
+		\item Abbruchbedingung, die sicher erreicht wird
+		\item Sonst unendliche Rekursion $\rightarrow$ verbrennt Zeit und Speicher (Stack-Overflow)
+	\end{itemize}
+	
+	\subsubsection{Der Aufrufstapel}
+	\vspace{0.1cm}
+	\begin{itemize}
+		\item Bei jedem Funktionsaufruf kommt ein "`Auftrag"' auf den Aufrufstapel
+		\item Sobald der Base-Case erreicht wird, wird der Stapel von oben nach unten abgearbeitet und die Aufträge gelöscht
+	\end{itemize}
+
+\section{Structs \& Classes}
+
+	\subsection{Structs}
+	\vspace{0.1cm}
+	Um sich einen eigenen Typ zu basteln. Default ist public.
+	\subsubsection{Definition}
+	\vspace{0.1cm}
+	\code{\textcolor{red}{struct} T \{ \textcolor{blue}{$\backslash \backslash$T is der Name des neuen Typs} \\
+	\phantom{struct } type$_1$ name$_1$; \\
+	\phantom{struct } type$_2$ name$_2$; \textcolor{blue}{$\backslash \backslash$type$_{1-n}$ sind die Typen der Membervariablen.}\\
+	\phantom{struct } .... \\
+	\phantom{struct } type$_n$ name$_n$; \textcolor{blue}{$\backslash \backslash$name$_{1-n}$ sind die Namen der Membervariablen.}  \\
+	\}
+	}
+	\subsubsection{Member-Zugriff}
+	
+	\code{expr.name$_k$}
+	\begin{itemize}
+		\item expr ist vom Struct-Typ T
+		\item name ist der Name einer Member-Variable des Typs T
+		\item . ist der Member-Zugriff-Operator
+	\end{itemize}
+	
+	\subsubsection{Initialisierung}
+	\begin{tabular}{l l}
+		\textbf{T t;} & Membervariablen von t vom Typ T werden  \\
+		& default-initialisiert (Wert undefiniert) \\
+		\textbf{T t = \{x, y, \dots\};} & Membervariablen von t werden mit den Werten \\
+		& der Liste initialisiert. \\
+	\end{tabular}
+	
+	\subsection{Classes}
+	
+	\subsubsection{Überladen von Funktionen}
+	Man kann mehrere Funktionen mit dem gleichen Namen haben, solange die Signatur anders ist. \\
+	Signatur = Namen, Typen, Anzahl und Reihenfolge der Argumente. \\
+	\newline
+	\textbf{Operator Overloading:} \code{\textcolor{red}{operator}op} \\
+	Erlaubt es, die normalen Operatoren (\code{+,-,*,/}) für Structs und Classes zu definieren. \\
+	Operatoren sind dann normal anwendbar (Bsp: \code{x + y})
+	
+	\subsubsection{Datenkapselung}
+	\begin{itemize}
+		\item Wir verstecken die Repräsentation und bieten Funktionalität.
+		\item Struct: nichts wird versteckt (default: public)
+		\item Class: alles wird versteckt (default: private)
+	\end{itemize}
+	
+	\subsubsection{Deklaration}
+	\code{\textcolor{red}{class} T \{ \\
+	\textcolor{red}{public}: \textcolor{blue}{$\backslash$$\backslash$ Memberfunktionen der Klasse, auf die man Zugriff haben soll.} \\
+	\textcolor{red}{private}: \textcolor{blue}{$\backslash$$\backslash$ Membervariablen, auf die man kein Zugriff haben soll} \\
+	\}; \\}
+	\newline
+	\textbf{Out-of-class-Memberdefinition} benötigt ein \code{T::}
+	
+	\subsubsection{Konstruktoren}
+	\vspace{0.1cm}
+	\begin{itemize}
+		\item Sind spezielle Memberfunktionen einer Klasse, die den Namen der Klasse tragen
+		\item Können überladen werden
+		\item Werden bei der Variablendeklaration aufgerufen
+		\item Gibt es keine Variablen bei Deklaration wird der Default-Konstruktor aufgerufen\\ $\rightarrow$ wird automatisch erzeugt wenn keiner definiert \\
+	\end{itemize}
+	\code{T::T(\textcolor{red}{type$_1$} x, \textcolor{red}{type$_2$} y) : name$_1$ (x), name$_2$ (y) \{ \\
+	\phantom{T::T}\textcolor{blue}{$\backslash$$\backslash$ Zusätzliche Bedingungen} \\
+	\}
+	}\\\\
+        Aufruf des Konstruktors:
+        %\vspace{0.1cm}
+	\begin{itemize}
+	\item \code{T t = T(x, y);}
+        \item \code{T t(x, y);}
+        \end{itemize}
+	\subsubsection{this und \code{->}}
+	\begin{itemize}
+		\item this stellt einen Zeiger auf die momentane Instanz dar
+		\item \code{->} dereferenziert einen Zeiger und führt den Punktoperator aus
+	\end{itemize}
+	
+
+
+%------------------------------------------
+
+\section{Dynamische Datenstrukturen}
+
+	\subsection{Arrays}
+	\subsubsection{Der new-Ausdruck}
+	\code{p = \textcolor{red}{new} Type[n]}
+	\begin{itemize}
+		\item Type ist der zugrundeliegende Typ vom Array
+		\item n it die Grösse des zusammenhängenden Speicherplatzes
+		\item Der Speicher bleibt reserviert bis man ihn explizit freigibt.
+		\item p ist ein Zeiger auf die Startadresse des Speicherbereichs \\
+	\end{itemize}
+	
+	\code{p = \textcolor{red}{new} Type(Konstruktorargumente)}
+	\begin{itemize}
+		\item Speicher für ein neues Objekt vom Typ T wird alloziiert
+		\item p ist ein Zeiger auf die Adresse des Objekts
+	\end{itemize}
+	
+	\subsubsection{Zeiger-Typen}
+	\begin{tabular}{l l}
+		\textbf{Type* p} & Zeiger auf den Typ Type \\
+		\textbf{p = \textcolor{red}{new}...} & Adresse eines neuen Objektes. \\
+		\textbf{p = \textcolor{red}{\&}expr} & Adresse eines bereits bestehenden Objektes des Typen Type.
+	\end{tabular}
+	
+	\subsubsection{Dereferenz-Operator}
+	\code{expr = \textcolor{red}{*}p}
+	\begin{itemize}
+		\item p ist ein Zeiger
+		\item Gibt den Wert hinter der Adresse p zurück
+		\item Adress- und Dereferenzoperator sind inverse Funktionen
+	\end{itemize}
+	
+	\subsubsection{Null-Zeiger}
+	\begin{itemize}
+		\item Zeigerwert, der angibt, dass auf kein Objekt gezeigt wird
+		\item Repräsentiert durch \textcolor{red}{nullptr}
+	\end{itemize}
+	
+	\subsubsection{Zeigerarithmetik}
+	\begin{tabular}{l l}
+	\textbf{Zeiger plus int} & p + i zeigt auf das i-te Element des Arrays. \\
+	\textbf{Zeigersubstraktion} & Differenz beschreibt, wie weit die Elemente \\
+	& voneinander entfernt liegen.
+	\end{tabular}
+	
+	\subsubsection{Auf Zeiger zugreifen}
+	\textbf{Sequentielle Iteration:} \\
+	\code{\textcolor{red}{for} (\textcolor{red}{char}* it = p; it != p + el; ++it)\{ \textcolor{blue}{$\backslash$$\backslash$ el = Anzahl Elemente im Array} \\
+	\phantom{for } statement; \\
+	\} \\}
+	\newline
+	\textbf{Wahlfreier Zugriff:} \code{p[i] == *(p + i)}
+	
+	\subsubsection{Statische Arrays}
+	\code{p = \textcolor{red}{int} a[n]}
+	\begin{itemize}
+		\item Wie Array nur dass die Grösse nicht verändert werden kann.
+		\item Vektoren $>$ Dynamische Arrays $>$ Statische Arrays
+	\end{itemize}
+	
+	\subsubsection{Arrays in Funktionen}
+	\begin{tabular}{l l}
+		\textbf{Konvention} & Array wird durch 2 Zeiger beschrieben. \\
+		\textbf{begin} & Zeiger auf das erste Element \\
+		\textbf{end} & Zeiger hinter das letzte Element \\
+		\textbf{Array leer} & wenn begin == end \\ 
+	\end{tabular}
+	
+	\subsubsection{Const und Zeiger}
+	\begin{tabular}{l l}
+		\textbf{int const p1} & p1 ist ein const int \\
+		\textbf{int const* p2} & p2 ist ein Zeiger auf einen const int \\
+		\textbf{int* const p3} & p3 ist ein const Zeiger auf einen int \\
+		\textbf{int const* const p4} & p4 ist ein const Zeiger auf einen const int 
+	\end{tabular}
+
+        \subsubsection{Shared Pointers}
+        Pointertyp, der sich die Anzahl an Shared Pointern, die auf unser Objekt zeigen merkt und es automatisch löscht, sobald kein Pointer mehr darauf zeigt.
+        \begin{itemize}
+            \item \code{std::shared\_ptr<T> -> } \text{Shared Pointer Klasse auf Objekt von Typ T } 
+            \item \code{sharedPtr.use\_count() -> } \text{Anzahl an Pointern, die auf das Objekt zeigt.}
+        \end{itemize}
+
+        \subsubsection{Unique Pointers}
+        Pointertyp, von dem immer nur genau ein Pointer auf dasselbe Objekt zeigen darf und das objekt automatisch löscht, sobald der Unique Pointer out-of-scope geht.
+        \begin{itemize}
+            \item \code{std::unique\_ptr<T> -> } \text{Unique Pointer Klasse auf Objekt von Typ T } 
+            \item \code{oldUniquePtr.move(newUniquePtr) -> } \text{Anzahl an Pointern, die auf das Objekt zeigt.}
+        \end{itemize}
+	
+	\subsection{Verkettete Listen}
+	Kein zusammenhängender Speicherbereich sondern jedes element zeigt auf seinen Nachfolger.
+	\subsubsection{Realisierung}
+	\code{\textcolor{red}{struct} llnode\{ \\
+	\phantom{struct} \textcolor{red}{int} value; \\
+	\phantom{struct} llnode* next; \\
+	\\
+	\phantom{struct} llnode(\textcolor{red}{int} v, llnode* n) : value(v) next(n) \{\} \textcolor{blue}{$\backslash$$\backslash$ Constructor} \\
+	\};}
+	
+	\subsubsection{Vektor durch Linked List}
+	Entspricht einem Zeiger auf das erste Element.\\
+	\code{\textcolor{red}{class} llvec \{ \\
+	\phantom{class }llnode* head; \\
+	\textcolor{red}{public}: \\
+	\phantom{class }llvec(\textcolor{red}{unsigned int} size); \\
+	\phantom{class }\textcolor{red}{unsigned int} size() \textcolor{red}{const}; \\
+	\};}
+	
+	\subsubsection{Brauchbare Funktionen}
+	\code{\begin{tabular}{l l}
+		print & \textcolor{red}{void} llvec::print(std::ostream\& sink) \textcolor{red}{const} \{ \\
+		& \phantom{void }\textcolor{red}{for} (llnode* n = \textcolor{red}{this}-$>$head; n != \textcolor{red}{nullptr}; n = n->next) \{ \\
+		& \phantom{void for }sink << n->value << ' '; \}\} \\
+		\\
+		operator[] & \textcolor{red}{int\&} llvec::\textcolor{red}{operator}[](\textcolor{red}{unsigned int} i) \{ \\
+		& \phantom{int6 }llnode* n = \textcolor{red}{this}->head; \\
+		& \phantom{int6 }\textcolor{red}{for} ( ; 0 $<$ i; --i) n = n->next; \\
+		& \phantom{int6 }\textcolor{red}{return} n->value; \} \\
+		\\
+		push$\_$front & \textcolor{red}{void} llvec::push$\_$front(\textcolor{red}{int} e) \{ \\
+		& \phantom{void }\textcolor{red}{this}->head = \textcolor{red}{new} llnode\{e, \textcolor{red}{this}->head\}; \} \\
+		\\
+	\end{tabular}
+	}
+	
+	
+	\subsection{Speicherverwaltung}
+	
+	\subsubsection{Der Delete-Ausdruck}
+	\code{\textcolor{red}{delete} p;}
+	\begin{itemize}
+		\item p ist ein Zeiger, der auf ein vorher mit new erzeugtes Objekt zeigt
+	\end{itemize}
+	\code{\textcolor{red}{delete}[] p;}
+	\begin{itemize}
+		\item p ist ein Zeiger, der auf ein vorher mit new erzeugtes Array zeigt.
+	\end{itemize}
+	
+	\subsubsection{Der Destruktor}
+	\begin{itemize}
+		\item Deklaration: \code{$\backsim$Type()}
+		\item Wird automatisch aufgerufen bei Aufruf von delete oder wenn Gültigkeitsbereich endet.
+		\item Wird automatisch erzeugt wenn keiner definiert wird
+	\end{itemize}
+	
+	\subsubsection{Die Dreierregel}
+	\begin{tabular}{l l}
+		\textbf{Destruktor} & Löscht Elemente \\
+		\textbf{Copy-Konstruktor} & Deklaration: \code{Type(const Type\& x)}\\
+		& Für korrektes Kopieren und Initialisieren\\
+		\textbf{Zuweisungsoperator} & \code{operator=} \\
+		& Wie Copy-Konstruktor, aber früherer "`Müll"' wird aufgeräumt\\
+	\end{tabular}
+	
+	\subsection{Bäume}
+	Sind verallgemeinerte Listen: Knoten können mehrere Nachfolger haben.\\
+	\code{\textcolor{red}{struct} tnode \{ \\
+	\phantom{struct }\textcolor{red}{char} op; \textcolor{red}{double} val; \\
+	\phantom{struct }tnode* left; tnode* right;\\
+	\\
+	tnode(\textcolor{red}{char} o, \textcolor{red}{double} v, tnode* l, tnode* r) : op(o), val(v), left(l), right(r) \{\};
+	}
+	
+	\subsubsection{Brauchbare Funktionen}
+	\code{\textcolor{blue}{$\backslash$$\backslash$ POST: returns the size (number of nodes) of the subtree with root n}\\
+	\textcolor{red}{int} size (\textcolor{red}{const} tnode* n) \{ \\
+	\phantom{int }\textcolor{red}{if} (n)\{\\
+	\phantom{int if}\textcolor{red}{return} size(n->left) + size(n->right) + 1;\\
+	\phantom{int }\}\\
+	\phantom{int}\textcolor{red}{return} 0;\\
+	\}
+		}\\
+	
+	\code{\textcolor{blue}{$\backslash$$\backslash$ POST: evaluates the subtree with root n}\\
+	\textcolor{red}{double} eval(\textcolor{red}{const} tnode* n) \{ \\
+	\phantom{double }assert(n);\\
+	\phantom{double }\textcolor{red}{if} (n->op == '=') \textcolor{red}{return} n->val; \textcolor{blue}{$\backslash$$\backslash$ Blatt}\\
+	\phantom{double }\textcolor{red}{double} l = 0;\\
+	\phantom{double }\textcolor{red}{if} (n->left)) l = eval(n->left); \textcolor{blue}{$\backslash$$\backslash$ linker und rechter Ast}\\ 
+	\phantom{double }\textcolor{red}{double} r = eval(n->right);\\
+	\phantom{double }\textcolor{red}{switch}(n->op)\{\\
+	\phantom{double switch}\textcolor{red}{case} '+': \textcolor{red}{return} l+r;\\
+	\phantom{double switch}\textcolor{red}{case} '-': \textcolor{red}{return} l-r;\\
+	\phantom{double switch}\textcolor{red}{case} '*': \textcolor{red}{return} l*r;\\
+	\phantom{double switch}\textcolor{red}{case} '/': \textcolor{red}{return} l/r;\\
+	\phantom{double switch}\textcolor{red}{default:} \textcolor{red}{return} 0;\\
+	\phantom{double }\}\\
+	\}
+		}\\
+	\code{\begin{tabular}{l l}
+		copy & tnode* copy (\textcolor{red}{const} tnode* n) \{\\
+		&\phantom{tnode* }\textcolor{red}{if} (n == \textcolor{red}{nullptr})\\
+		& \phantom{tnode* if}\textcolor{red}{return} \textcolor{red}{nullptr};\\
+		& \phantom{tnode* }\textcolor{red}{return} new tnode (n->op, n->val,\\
+		& \phantom{tnode* }copy(n->left), copy(n->right));\\
+		&\}\\
+		\\
+		clear & \textcolor{red}{void} clear(tnode* n) \{ \\
+		& \phantom{void }\textcolor{red}{if}(n)\{ \\
+		& \phantom{void if}clear(n->left);\\
+		& \phantom{void if}clear(n->right);\\
+		& \phantom{void if}\textcolor{red}{delete} n;\\
+		& \phantom{void }\}\\
+		&\}\\
+		\\
+	\end{tabular}
+	}
+
+%------------------------------------------
+
+\section{Containers}
+	Ansammlungs-Datenstrukturen.
+	
+	\subsection{Funktionen}
+	\begin{tabular}{l l}
+	\textbf{contains(c, e)} & true, wenn Container c Element e enthält \\
+	\textbf{min/max(c)} & Gibt das grösste/kleinste Element zurück \\
+		\textbf{sort(c)} & Sortiert die Elemente \\
+		\textbf{replace(c, e1, e1)} & Ersetzt alle e1 in c durch e2 \\
+		\textbf{sample(c, n)} & Wählt zufällig n elemente aus c aus
+	\end{tabular}
+	
+	\subsection{Iteratoren}
+	\begin{tabular}{l l}
+	\textbf{it = c.begin()} & Iterator aufs erste Element \\
+	\textbf{it = c.end()} & Iterator hinters letzte Element \\
+	\textbf{*it} & Zugriff aufs aktuelle Element \\
+	++\textbf{it} & Iterator um ein Element verschieben
+		
+	\end{tabular}
+	
+	\subsubsection{Const-Iteratoren}
+	\vspace{0.1cm}
+	\code{cname::const\_iterator it = c.cbegin();}\\
+	Gestatten Lesezugriff bei konstanten Containern.
+	\subsection{Beispiele}
+	\begin{tabular}{l l}
+		\textbf{std::unordered$\_$set$<$Type$>$} & Ungeordnete, duplikatfreie  \\
+		& Zusammenfassung von Elementen. \\
+		\textbf{std::set$<$Type$>$} & Geordnete, duplikatfreie Zusammenfassung \\
+		& von Elementen. \\
+	\end{tabular}
+
+
+%--------------------------------------------
+
+\section{Extras}
+
+	\subsection{Assertions}
+	\code{assert(expr);}
+	\begin{itemize}
+		\item benötigt \code{\#include $<$cassert$>$}
+		\item Programm wird beendet falls expr nicht true
+		\item abschalten durch \code{\#define NDEBUG}
+	\end{itemize}
+	
+	\subsection{Typ-Aliasse}
+	\code{using Name = Typ \textcolor{blue}{$\backslash$$\backslash$Typ kann neu mit Name angesprochen werden}
+	}
+	\subsection{Die Standardbibliothek}
+	benötigt \code{\#include} \\
+	\begin{tabular}{l l l}
+	\code{<iostream>} & \code{std::cin>>} \\
+	& \code{std::cout<<} \\
+	\hline
+	\code{<cmath>} & \code{std::pow()} & Potenzieren \\
+	& \code{std::sqrt()} & Quadratwurzel \\
+	& \code{std::abs()} & Absolutbetrag \\
+	\hline
+	\code{<algorithm>} & \code{std::max} & Maximum zweier Argumente
+	\end{tabular}
+	
+	
+	\subsection{Fehlerquellen}
+	\vspace{0.1cm}
+	\begin{itemize}
+		\item Deklarationen sind nur im Block gültig.
+		\item Funktionsargumente nicht vergessen.
+		\item Wenn man eine Referenz erzeugt, muss das Objekt, auf das sie verweist, mindestens so lange leben wie die Referenz selbst.
+		\item Der Zugriff auf Elemente ausserhalb der gültigen Grenzen eines Vektors führt zu undefiniertem Verhalten.
+		\item Verhalten von Funktionen ungleich void ist undefiniert, wenn das Ende des Rumpfes ohne return-Anweisung erreicht wird.
+		\item Vergleichsoperatoren existieren für structs und classes per default nicht.
+	\end{itemize}
+	
+	
+
+
+												
+    \end{multicols*}
+\setcounter{secnumdepth}{2}
 \end{document}
