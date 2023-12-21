@@ -903,11 +903,11 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \c@nlinenum=\count338
 \TeXr@lab=\toks41
 )
-LaTeX Font Info:    Redeclaring symbol font `letters' on input line 116.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 113.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
-(Font)                  OML/cmbrm/m/it --> OML/ztmcm/m/it on input line 116.
+(Font)                  OML/cmbrm/m/it --> OML/ztmcm/m/it on input line 113.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/cmbrm/b/it --> OML/ztmcm/m/it on input line 116.
+(Font)                  OML/cmbrm/b/it --> OML/ztmcm/m/it on input line 113.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
@@ -917,20 +917,20 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -990,272 +990,277 @@ e
 ))
 \Hy@linkcounter=\count346
 LaTeX Font Info:    Font shape `OT1/cmbr/b/n' in size <10> not available
-(Font)              Font shape `OT1/cmbr/bx/n' tried instead on input line 126.
+(Font)              Font shape `OT1/cmbr/bx/n' tried instead on input line 123.
 
 LaTeX Font Info:    Font shape `OT1/cmbr/b/n' in size <14.4> not available
-(Font)              Font shape `OT1/cmbr/bx/n' tried instead on input line 126.
+(Font)              Font shape `OT1/cmbr/bx/n' tried instead on input line 123.
 
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 126.
+ 123.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+cmbrs on input line
- 126.
+ 123.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/cmbright/omscmbrs.fd
 File: omscmbrs.fd 2005/04/13 v8.1 (WaS)
 )
 LaTeX Font Info:    Trying to load font information for U+esint on input line 1
-26.
+23.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/esint/uesint.fd
 File: uesint.fd 
 )
 LaTeX Font Info:    Trying to load font information for OML+cmbrm on input line
- 126.
+ 123.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/cmbright/omlcmbrm.fd
 File: omlcmbrm.fd 2005/04/13 v8.1 (WaS)
 )
 LaTeX Font Info:    Trying to load font information for U+esvect on input line 
-126.
+123.
 
 (/opt/texlive/texdir/texmf-dist/tex/latex/esvect/uesvect.fd
 File: uesvect.fd 
 )
-Overfull \hbox (6.90224pt too wide) in paragraph at lines 126--126
+Overfull \hbox (6.90224pt too wide) in paragraph at lines 123--123
 [][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 130--131
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
 
  []
 
 [1
 
 {/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (6.90224pt too wide) in paragraph at lines 138--138
+Overfull \hbox (6.90224pt too wide) in paragraph at lines 135--135
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 140--140
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 137--137
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 142--142
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 139--139
 [][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--161
+Underfull \hbox (badness 10000) in paragraph at lines 142--158
 
  []
 
 LaTeX Font Info:    Trying to load font information for OT1+cmtl on input line 
-163.
+160.
 (/opt/texlive/texdir/texmf-dist/tex/latex/cmbright/ot1cmtl.fd
 File: ot1cmtl.fd 2005/04/13 v8.1 (WaS)
 )
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 166--166
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 163--163
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 168--168
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 165--165
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 178--178
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 175--175
 [][][][][][][][][] 
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+cmbr on input line 
-182.
+179.
 (/opt/texlive/texdir/texmf-dist/tex/latex/cmbright/ts1cmbr.fd
 File: ts1cmbr.fd 2005/04/13 v8.1 (WaS)
 )
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 188--188
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 185--185
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 219--219
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 216--216
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 227--227
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 224--224
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 237--237
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 234--234
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 243--243
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 240--240
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 245--245
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 242--242
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 249--249
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 246--246
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 254--254
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 251--251
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 256--256
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 253--253
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 293--293
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 290--290
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 309--309
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 306--306
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 320--320
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 317--317
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 328--328
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 325--325
 [][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 330--330
+Underfull \hbox (badness 10000) in paragraph at lines 327--327
 []|\OT1/cmbr/m/n/10 Dezimal
  []
 
 
-Overfull \hbox (3.88724pt too wide) in paragraph at lines 331--331
+Overfull \hbox (3.88724pt too wide) in paragraph at lines 328--328
 |[][]
  []
 
 
-Overfull \hbox (9.80147pt too wide) in paragraph at lines 329--337
+Overfull \hbox (9.80147pt too wide) in paragraph at lines 326--334
 [] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 338--338
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 335--335
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 343--343
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 340--340
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.90224pt too wide) in paragraph at lines 351--351
+Overfull \hbox (6.90224pt too wide) in paragraph at lines 348--348
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 353--353
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 350--350
 [][][][][][][][][] 
  []
 
 LaTeX Font Info:    Trying to load font information for OMS+cmtl on input line 
-365.
-LaTeX Font Info:    No file OMScmtl.fd. on input line 365.
+362.
+LaTeX Font Info:    No file OMScmtl.fd. on input line 362.
 
 LaTeX Font Warning: Font shape `OMS/cmtl/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 365.
+(Font)              for symbol `textbraceleft' on input line 362.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 365--366
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 365--366
+Underfull \hbox (badness 10000) in paragraph at lines 362--363
 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 366--366
+Underfull \hbox (badness 10000) in paragraph at lines 362--363
+
+ []
+
+
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 363--363
 [][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 371--372
+Underfull \hbox (badness 10000) in paragraph at lines 368--369
 [] $\OMS/cmbrs/m/n/10 nn$\OT1/cmtl/m/n/10 (ii) while condition == true, stateme
 nt is executed, expression is
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 372--372
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 369--369
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 377--377
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 374--374
 [][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 381--382
+Underfull \hbox (badness 10000) in paragraph at lines 378--379
 []\OT1/cmtl/m/n/10 while[] (condition); []$\OMS/cmbrs/m/n/10 nn$ \OT1/cmtl/m/n/
 10 statement is executed once, afterwards while-loop[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 381--382
+Underfull \hbox (badness 10000) in paragraph at lines 378--379
 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 382--382
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 379--379
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 395--395
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 392--392
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 410--410
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 407--407
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.90224pt too wide) in paragraph at lines 420--420
+Overfull \hbox (6.90224pt too wide) in paragraph at lines 417--417
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 421--421
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 418--418
+[][][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 419--419
 [][][][][][][][][] 
  []
 
@@ -1265,199 +1270,199 @@ Overfull \hbox (6.9667pt too wide) in paragraph at lines 422--422
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 425--425
-[][][][][][][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 429--430
+Underfull \hbox (badness 10000) in paragraph at lines 426--427
 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 430--430
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 427--427
 [][][][][][][][][] 
  []
 
 [2]
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 433--433
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 430--430
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 440--440
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 437--437
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 449--449
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 446--446
 [][][][][][][][][] 
  []
 
 LaTeX Font Info:    Trying to load font information for OMS+cmbr on input line 
-453.
+450.
 (/opt/texlive/texdir/texmf-dist/tex/latex/cmbright/omscmbr.fd
 File: omscmbr.fd 2005/04/13 v8.1 (WaS)
 )
 LaTeX Font Info:    Font shape `OMS/cmbr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmbrs/m/n' tried instead on input line 453.
+(Font)              Font shape `OMS/cmbrs/m/n' tried instead on input line 450.
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 456--456
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 453--453
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 457--457
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 454--454
 [][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 6284) in paragraph at lines 461--462
+Underfull \hbox (badness 6284) in paragraph at lines 458--459
 []\OT1/cmbr/m/n/10 Datei ins Ar-beits-ver-zeich-nis der Haupt-da-tei stecken un
 d durch \OT1/cmtl/m/n/10 #include
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 466--466
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 463--463
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 475--475
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 472--472
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.90224pt too wide) in paragraph at lines 483--483
+Overfull \hbox (6.90224pt too wide) in paragraph at lines 480--480
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 485--485
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 482--482
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 489--489
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 486--486
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 491--491
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 488--488
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 498--498
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 495--495
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 506--506
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 503--503
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.90224pt too wide) in paragraph at lines 515--515
+Overfull \hbox (6.90224pt too wide) in paragraph at lines 512--512
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 517--517
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 514--514
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 521--521
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 518--518
 [][][][][][][][][] 
  []
 
 
 LaTeX Font Warning: Font shape `OMS/cmbr/b/n' undefined
 (Font)              using `OMS/cmbr/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 531.
+(Font)              for symbol `textbraceleft' on input line 528.
 
 LaTeX Font Info:    Font shape `OMS/cmbr/b/n' in size <10> not available
-(Font)              Font shape `OMS/cmbrs/m/n' tried instead on input line 531.
+(Font)              Font shape `OMS/cmbrs/m/n' tried instead on input line 528.
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 537--537
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 534--534
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 551--551
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 548--548
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 560--560
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 557--557
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 569--569
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 566--566
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 571--571
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 568--568
 [][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 573--574
+Underfull \hbox (badness 10000) in paragraph at lines 570--571
 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 575--575
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 572--572
 [][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 576--578
+Underfull \hbox (badness 10000) in paragraph at lines 573--575
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 579--580
+Underfull \hbox (badness 10000) in paragraph at lines 576--577
 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 588--588
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 585--585
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 607--607
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 604--604
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.90224pt too wide) in paragraph at lines 616--616
+Overfull \hbox (6.90224pt too wide) in paragraph at lines 613--613
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 618--618
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 615--615
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 620--620
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 617--617
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 628--628
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 625--625
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.90224pt too wide) in paragraph at lines 635--635
+Overfull \hbox (6.90224pt too wide) in paragraph at lines 632--632
+[][][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 634--634
 [][][][][][][][][] 
  []
 
@@ -1467,292 +1472,292 @@ Overfull \hbox (6.9667pt too wide) in paragraph at lines 637--637
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 640--640
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 646--646
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 649--649
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 655--655
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 658--658
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 663--663
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 666--666
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 665--665
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 668--668
+Underfull \hbox (badness 10000) in paragraph at lines 666--672
+
+ []
+
+
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 673--673
 [][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 669--675
-
- []
-
-
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 676--676
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 680--680
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 683--683
-[][][][][][][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 687--690
+Underfull \hbox (badness 10000) in paragraph at lines 684--687
 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 691--691
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 688--688
 [][][][][][][][][] 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 697--698
+Underfull \hbox (badness 10000) in paragraph at lines 694--695
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 702--706
+Underfull \hbox (badness 10000) in paragraph at lines 699--703
 
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmtl/b/n' undefined
-(Font)              using `OT1/cmtl/m/n' instead on input line 709.
+(Font)              using `OT1/cmtl/m/n' instead on input line 706.
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 709--709
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 706--706
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.90224pt too wide) in paragraph at lines 719--719
+Overfull \hbox (6.90224pt too wide) in paragraph at lines 716--716
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 721--721
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 718--718
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 722--722
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 719--719
 [][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 728--729
+Underfull \hbox (badness 10000) in paragraph at lines 725--726
 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 737--737
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 734--734
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 744--744
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 741--741
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 752--752
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 749--749
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 758--758
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 755--755
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 765--765
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 762--762
 [][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 766--772
+Underfull \hbox (badness 10000) in paragraph at lines 763--769
 []\OT1/cmtl/m/n/10 for[] ([]char[]* it = p; it != p + el; ++it)\OMS/cmtl/m/n/10
  f []$\OMS/cmbrs/m/n/10 n$$n$ \OT1/cmtl/m/n/10 el = Anzahl Elemente im
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 766--772
+Underfull \hbox (badness 10000) in paragraph at lines 763--769
 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 773--773
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 770--770
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 780--780
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 777--777
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 788--788
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 785--785
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 796--796
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 793--793
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 803--803
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 800--800
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (16.22647pt too wide) in paragraph at lines 807--808
+Overfull \hbox (16.22647pt too wide) in paragraph at lines 804--805
 []\OT1/cmtl/m/n/10 oldUniquePtr.move(newUniquePtr) ->  [] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 810--810
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 807--807
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 812--812
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 809--809
 [][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 818--819
+Underfull \hbox (badness 10000) in paragraph at lines 815--816
 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 820--820
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 817--817
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 829--829
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 826--826
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (31.56332pt too wide) in paragraph at lines 844--845
+Overfull \hbox (31.56332pt too wide) in paragraph at lines 841--842
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 844--845
+Underfull \hbox (badness 10000) in paragraph at lines 841--842
 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 847--847
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 844--844
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 849--849
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 846--846
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 859--859
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 856--856
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 866--866
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 863--863
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (3.72743pt too wide) in paragraph at lines 867--874
+Overfull \hbox (3.72743pt too wide) in paragraph at lines 864--871
 [] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 875--875
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 872--872
 [][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 876--883
+Underfull \hbox (badness 10000) in paragraph at lines 873--880
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 876--883
+Underfull \hbox (badness 10000) in paragraph at lines 873--880
 \OT1/cmtl/m/n/10 tnode([]char[] o, []double[] v, tnode* l, tnode* r) : op(o), v
 al(v), left(l),
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 884--884
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 881--881
 [][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 892--893
+Underfull \hbox (badness 10000) in paragraph at lines 889--890
 
  []
 
 
-Overfull \hbox (6.90224pt too wide) in paragraph at lines 931--931
+Overfull \hbox (6.90224pt too wide) in paragraph at lines 928--928
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 934--934
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 931--931
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 943--943
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 940--940
 [][][][][][][][][] 
  []
 
 [4]
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 952--952
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 949--949
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 956--956
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 953--953
 [][][][][][][][][] 
  []
 
 LaTeX Font Info:    Font shape `OT1/cmbr/b/n' in size <7> not available
-(Font)              Font shape `OT1/cmbr/bx/n' tried instead on input line 958.
+(Font)              Font shape `OT1/cmbr/bx/n' tried instead on input line 955.
 
 
 LaTeX Font Warning: Font shape `OT1/cmbr/bx/n' in size <7> not available
-(Font)              Font shape `OT1/cmbr/m/n' tried instead on input line 958.
+(Font)              Font shape `OT1/cmbr/m/n' tried instead on input line 955.
 
 LaTeX Font Info:    Font shape `OT1/cmbr/b/n' in size <5> not available
-(Font)              Font shape `OT1/cmbr/bx/n' tried instead on input line 958.
+(Font)              Font shape `OT1/cmbr/bx/n' tried instead on input line 955.
 
 
 LaTeX Font Warning: Font shape `OT1/cmbr/bx/n' in size <5> not available
-(Font)              Font shape `OT1/cmbr/m/n' tried instead on input line 958.
+(Font)              Font shape `OT1/cmbr/m/n' tried instead on input line 955.
 
 
-Overfull \hbox (6.90224pt too wide) in paragraph at lines 967--967
+Overfull \hbox (6.90224pt too wide) in paragraph at lines 964--964
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 969--969
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 966--966
+[][][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 974--974
 [][][][][][][][][] 
  []
 
@@ -1762,12 +1767,7 @@ Overfull \hbox (6.9667pt too wide) in paragraph at lines 977--977
  []
 
 
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 980--980
-[][][][][][][][][] 
- []
-
-
-Overfull \hbox (6.9667pt too wide) in paragraph at lines 994--994
+Overfull \hbox (6.9667pt too wide) in paragraph at lines 991--991
 [][][][][][][][][] 
  []
 
